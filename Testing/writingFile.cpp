@@ -10,7 +10,7 @@ int main () {
 }
 
 void makeFile() {
-  ofstream myfile ("add.in");
+  ofstream myfile ("test.in");
   if (myfile.is_open()) {
     myfile << "4\n";
     myfile << "3\n";

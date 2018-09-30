@@ -4,9 +4,9 @@ int reverse(int n);
 int reverse(int n) {
   int reverseNum = 0, rem;
   while (n != 0) {
-    rem = n % 10; // 2
-    reverseNum = reverseNum*10 + rem; // => 2
-    n /= 10; // => 51
+    rem = n % 10; // 5
+    reverseNum = reverseNum*10 + rem; // => 215
+    n /= 10; // => 0
   }
   return reverseNum;
 }
