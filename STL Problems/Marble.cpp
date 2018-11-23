@@ -4,25 +4,22 @@
 #include <iostream>
 #include <algorithm>
 
+
 using namespace std;
 
 // Recieved marble number and number ("queries") to search for
 void solve(vector<int> marbles, vector<int> queries){
+  sort(marbles.begin(), marbles.end());
   // Search for the index of the querie
   for (int q : queries) {
-    cout << q << endl;
-    // // Signal for found or not found
-    // bool sig = false;
-    // for (int i = 0; i < marbles.size(); i++) {
-    //   if (marbles[i] == q) {
-    //     sig = true;
-    //     cout << "Querie " << q << " Found at index: " << i << endl;
-    //   }
-    // }
-    // if (!sig) {
-    //   cout << "Querie " << q << " Not found in marbles" << endl;
-    // }
+    if (binary_search(marbles.begin(), marbles.end(), q)) {
+      cout << "Case " << q << " found at index ";
+      cout << lower_bound(marbles.begin(), marbles.end(), q) - marbles.begin() + 1 << endl;
+    } else {
+      cout << "Query not found" << endl;
+    }
   }
+
 }
 
 int main() {
